@@ -6,6 +6,7 @@ fn main() {
     let message = String::from("Hello fellow Rustaceans!");
     let width = message.chars().count();
 
-    let mut writer = BufWriter::new(stdout.lock());
-    say(&message, width, &mut writer).unwrap();
+    // mut keyword で、可変にする
+    let writer = BufWriter::new(stdout.lock());
+    say(&message, width, writer).unwrap();
 }
